@@ -55,9 +55,7 @@ Demo = {
 
     var blocks = Demo.blocks.deserialize(Demo.el.blocks.val());
     var packer = Demo.packer();
-
     Demo.sort.now(blocks);
-
     packer.fit(blocks);
 
     Demo.canvas.reset(packer.root.w, packer.root.h);
@@ -71,10 +69,12 @@ Demo = {
   packer: function() {
     var size = Demo.el.size.val();
     if (size == 'automatic') {
+      console.log("GrowingPacker");
       return new GrowingPacker();
     }
     else {
       var dims = size.split("x");
+      console.log("Packer");
       return new Packer(parseInt(dims[0]), parseInt(dims[1]));
     }
   },
@@ -200,11 +200,87 @@ Demo = {
       ],
 
       wide: [
-        { w: 400, h:  50, num:  2 },
-        { w: 300, h:  50, num:  5 },
-        { w: 200, h:  50, num: 10 },
-        { w: 100, h:  50, num: 20 },
-        { w:  50, h:  50, num: 40 }
+        {
+      w : 60,
+      h : 25
+    },
+    {
+      w : 100,
+      h : 25
+    },
+    {
+      w : 30,
+      h : 25
+    },
+    {
+      w : 50,
+      h : 25
+    },
+    {
+      w : 50,
+      h : 25
+    },
+    {
+      w : 60,
+      h : 25
+    },
+    {
+      w : 150,
+      h : 25
+    },
+    {
+      w : 50,
+      h : 25
+    },
+    
+    {
+      w : 90,
+      h : 25
+    },
+    {
+      w : 110,
+      h : 25
+    },
+    {
+      w : 100,
+      h : 25
+    },
+    {
+      w : 30,
+      h : 25
+    },
+    {
+      w : 50,
+      h : 25
+    },
+    {
+      w : 50,
+      h : 25
+    },
+    {
+      w : 60,
+      h : 25
+    },
+    {
+      w : 150,
+      h : 25
+    },
+    {
+      w : 50,
+      h : 25
+    },
+    {
+      w : 60,
+      h : 25
+    },
+    {
+      w : 90,
+      h : 25
+    },
+    {
+      w : 110,
+      h : 25
+    }
       ],
 
       tallwide: [ /* alternate tall then wide */
